@@ -128,6 +128,7 @@ class SaleOrder(models.Model):
     ], string=u'Estado de Impresion/Entrega', index=True, readonly=True, related='meli_order_id.shipping_substatus', store=True)
     shipping_mode = fields.Selection([
         ('me2','Mercado Envio'),
+        ('custom','Personalizado'),
     ], string=u'Metodo de envio', readonly=True)
     meli_total_amount = fields.Char(string='Total amount')
     meli_currency_id = fields.Char(string='Currency')

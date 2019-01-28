@@ -166,6 +166,7 @@ class mercadolibre_orders(models.Model):
     ], string=u'Estado de Impresion/Entrega', index=True, readonly=True)
     shipping_mode = fields.Selection([
         ('me2','Mercado Envio'),
+        ('custom','Personalizado'),
     ], string=u'Metodo de envio', readonly=True)
     note = fields.Html(u'Notas', readonly=True, copy=False)
     need_review = fields.Boolean(u'Necesita Revision?', readonly=True, copy=False)
