@@ -565,7 +565,7 @@ class mercadolibre_orders(models.Model):
                 })
         except Exception, e:
             _logger.error(tools.ustr(e))
-            notes.append(("Error descargando Pedido", tools.ustr(e)))
+            notes.append(("Error descargando Pedido con ID meli: %s" % order_json['id'], tools.ustr(e)))
         return meli_order, notes, send_mail
 
     def orders_update_order( self, context=None ):
